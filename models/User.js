@@ -2,6 +2,11 @@ const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 
+var sendJsonResponse = function(res, status, content) {
+    res.status(status);
+    res.json(content);
+};
+
 const itemsSchema = new mongoose.Schema({
   name: {type: String, required: true},
   category: String,
