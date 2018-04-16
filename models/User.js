@@ -2,6 +2,14 @@ const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 
+const itemsSchema = new mongoose.Schema({
+  name: {type: String, required: true},
+  category: String,
+  description: String,
+  price: Number,
+  status: Boolean //used to determine whether an item has been bought or sold
+})
+
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
@@ -23,7 +31,9 @@ const userSchema = new mongoose.Schema({
     location: String,
     website: String,
     picture: String
-  }
+  },
+  itemsForSale: [itemsSchema],
+  boughtItems: [itemsSchema]
 }, { timestamps: true });
 
 /**
@@ -66,5 +76,6 @@ userSchema.methods.gravatar = function gravatar(size) {
 };
 
 const User = mongoose.model('User', userSchema);
+const User = mongoose.model('Item', itemsSchema);
 
 module.exports = User;
