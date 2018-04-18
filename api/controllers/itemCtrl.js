@@ -16,8 +16,8 @@ module.exports.createItem = function(req, res) {
                     if (err) {
                         sendJsonResponse(res, 400, err);
                     } else {
-                        console.log(req);
-                        console.log(res);
+                        console.log(req.body);
+                        //console.log(res);
                         console.log(user);
                         doAddItem(req, res, user);
                     }

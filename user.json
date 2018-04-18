@@ -25,7 +25,7 @@
     "price": "price",
     "status": "status"
   }],
-  "bought": [{
+  "bought":  [{
     "_id": new ObjectId(),
     "name": "itemname",
     "category": "category",
