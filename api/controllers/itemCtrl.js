@@ -33,7 +33,7 @@ var doAddItem = function(req, res, user) {
         sendJsonResponse(res, 404, "userid not found");
     } else {
 
-        console.log(item);
+        console.log(user);
         console.log(req.body);
         user.sale.push({
             name: req.body.name,
