@@ -172,7 +172,7 @@ module.exports.deleteItem = function(req, res) {
         });
         return;
     }
-    Cor
+    User
         .findById(req.params.userid)
         .select('sale')
         .exec(
