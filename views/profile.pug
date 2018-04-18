@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Name: #{user.name}
+  p Items for sale:
+  each item in user.sellitems
+    a(href="/item/#{item.id}")
+      p Name: #{item.name}
+  p Items bought:
+  each item in user.buyitems
+    a(href="/item/#{item.id}")
+      p Name: #{item.name}
