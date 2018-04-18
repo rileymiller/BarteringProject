@@ -12,11 +12,11 @@ module.exports.createItem = function(req, res) {
             .findById(req.params.userid)
             .select('sale')
             .exec(
-                function(err, course) {
+                function(err, user) {
                     if (err) {
                         sendJsonResponse(res, 400, err);
                     } else {
-                        doAddItem(req, res, course);
+                        doAddItem(req, res, user);
                     }
                 }
             );
@@ -33,8 +33,8 @@ var doAddItem = function(req, res, user) {
         sendJsonResponse(res, 404, "userid not found");
     } else {
 
-        // console.log(item);
-        // console.log(req.body);
+        console.log(item);
+        console.log(req.body);
         user.sale.push({
             name: req.body.name,
             category: req.body.category,
