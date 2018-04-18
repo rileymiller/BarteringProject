@@ -1,5 +1,5 @@
-{
-  "email": "email",
+[{
+  "email": "email0@test.com",
   "password": "password",
   "passwordResetToken": "passwordResetToken",
   "passwordResetExpires": new Date(),
@@ -20,16 +20,944 @@
   },
   "sale": [{
     "_id": new ObjectId(),
-    "name": "itemname",
+    "name": "itemname0",
     "category": "category",
+    "created": new Date(),
     "price": "price",
     "status": "status"
   }],
   "bought":  [{
     "_id": new ObjectId(),
-    "name": "itemname",
+    "name": "itemname1",
     "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email1@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname2",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname3",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email2@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname4",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname5",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email3@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname6",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname7",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email4@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname8",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname9",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email5@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname10",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname11",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email6@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname12",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname13",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email7@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname14",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname15",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email8@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname16",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname17",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email9@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname18",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname19",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email10@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname20",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname21",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email11@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname22",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname23",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email12@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname24",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname25",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email13@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname26",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname27",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email14@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname28",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname29",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email15@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname30",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname31",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email16@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname32",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname33",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email17@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname34",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname35",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email18@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname36",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname37",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email19@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname38",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname39",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email20@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname40",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname41",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email21@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname42",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname43",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email22@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname44",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname45",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email23@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname46",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname47",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email24@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname48",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname49",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }]
+},
+{
+  "email": "email25@test.com",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "_id": new ObjectId(),
+    "name": "itemname50",
+    "category": "category",
+    "created": new Date(),
+    "price": "price",
+    "status": "status"
+  }],
+  "bought":  [{
+    "_id": new ObjectId(),
+    "name": "itemname51",
+    "category": "category",
+    "created": new Date(),
     "price": "price",
     "status": "status"
   }]
 }
+]
