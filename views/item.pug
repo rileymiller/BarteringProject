@@ -2,7 +2,9 @@ extends layout
 
 block content
   h1 Item: #{item.name}
-    h4 Current bid: $#{item.bid}
-    p Category: #{item.category}
+    h4 Current bid: $#{item.price}
+    p Date listed: #{item.date}
+    p Status: #{item.status}
     p Description:
-    p #{item.description}
+    p &nbsp &nbsp &nbsp #{item.description}
+    p Category: #{item.category}
