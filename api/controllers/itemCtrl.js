@@ -16,6 +16,9 @@ module.exports.createItem = function(req, res) {
                     if (err) {
                         sendJsonResponse(res, 400, err);
                     } else {
+                        console.log(req);
+                        console.log(res);
+                        console.log(user);
                         doAddItem(req, res, user);
                     }
                 }
@@ -35,7 +38,7 @@ var doAddItem = function(req, res, user) {
 
         console.log(user);
         console.log(req.body);
-        user.sale.push({
+        user.push({
             name: req.body.name,
             category: req.body.category,
             description: req.body.description,
