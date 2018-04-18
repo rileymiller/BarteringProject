@@ -1,0 +1,33 @@
+{
+  "email": "email",
+  "password": "password",
+  "passwordResetToken": "passwordResetToken",
+  "passwordResetExpires": new Date(),
+  "facebook": "facebook",
+  "twitter": "twitter",
+  "google": "google",
+  "github": "github",
+  "instagram": "instagram",
+  "linkedin": "linkedin",
+  "steam": "steam",
+  "tokens": "tokens",
+  "profile": {
+    "name": "name",
+    "gender": "gender",
+    "location": "location",
+    "website": "website",
+    "picture": "picture"
+  },
+  "sale": [{
+    "name": "itemname",
+    "category": "category",
+    "price": "price",
+    "status": "status"
+  }],
+  "bought": [{
+    "name": "itemname",
+    "category": "category",
+    "price": "price",
+    "status": "status"
+  }]
+}
