@@ -38,7 +38,7 @@ module.exports.getUserById = function(req, res) {
 module.exports.getBoughtItems = function(req, res) {
 	console.log('getting bought items for user ', req.params.userid)
 	if (req.params && req.params.userid) {
-        Cor
+        User
             .findById(req.params.userid)
             .select('bought')
             .exec(
@@ -80,7 +80,7 @@ module.exports.getBoughtItems = function(req, res) {
 module.exports.getSaleItems = function(req, res) {
 	console.log('getting sale items for user ', req.params.userid)
 	if (req.params && req.params.userid) {
-        Cor
+        User
             .findById(req.params.userid)
             .select('sale')
             .exec(
