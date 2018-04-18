@@ -37,8 +37,8 @@ const userSchema = new mongoose.Schema({
     website: String,
     picture: String
   },
-  itemsForSale: [itemsSchema],
-  boughtItems: [itemsSchema]
+  sale: [itemsSchema],
+  bought: [itemsSchema]
 }, { timestamps: true });
 
 /**
