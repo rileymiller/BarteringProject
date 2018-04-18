@@ -19,12 +19,14 @@
     "picture": "picture"
   },
   "sale": [{
+    "_id": new ObjectId(),
     "name": "itemname",
     "category": "category",
     "price": "price",
     "status": "status"
   }],
   "bought": [{
+    "_id": new ObjectId(),
     "name": "itemname",
     "category": "category",
     "price": "price",
