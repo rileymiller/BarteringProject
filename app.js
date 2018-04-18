@@ -35,6 +35,8 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
+const routeApi = require('./api/routes/index');
+
 /**
  * API keys and Passport configuration.
  */
@@ -44,6 +46,8 @@ const passportConfig = require('./config/passport');
  * Create Express server.
  */
 const app = express();
+
+app.use('/usersanditems', routeApi);
 
 /**
  * Connect to MongoDB.
