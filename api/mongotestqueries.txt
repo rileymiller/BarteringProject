@@ -1,0 +1,10 @@
+db.users.find().sort({_id:-1}).limit(5).pretty();
+#gets last 5 items added, -1 sorts in newest to oldest order
+
+#gets whole document when $elemMatch finds something in the embedded document.
+db.users.find({ 'sale': {$elemMatch:  {name: 'itemname7'} } }, {email: 1, "sale._id": 1, "sale.category": 1, "sale.name": 1, "profile.name": 1});
+
+#returns specific subdocument with specific fields from parent document, this is really good. need to find how to groom the query at the top with the $project operator if we can
+
+db.users.aggregate([{ $unwind: "$sale" }, { $project: {email: 1, _id: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created"} }, {$match: {item_name: 'itemname7'}}]).pretty();
+
