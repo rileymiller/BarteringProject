@@ -13,7 +13,7 @@ router.get('/user/:userid/sale', userItemCtrl.getSaleItems);
 
 
 // item routes
-router.post('/item/:userid', itemCtrl.createItem);
+router.post('/:userid/item', itemCtrl.createItem);
 router.put('/item/:userid/:itemid', itemCtrl.updateItem);
 router.delete('/item/:userid/:itemid', itemCtrl.deleteItem);
 router.get('/item/:userid/:itemid', itemCtrl.getItemById);
