@@ -11,8 +11,7 @@ const itemsSchema = new mongoose.Schema({
   name: {type: String, required: true},
   category: String,
   description: String,
-  price: Number,
-  status: Boolean //used to determine whether an item has been bought or sold
+  price: Number
 })
 
 const userSchema = new mongoose.Schema({

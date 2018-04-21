@@ -11,14 +11,14 @@
         | Mines Barter
     .collapse.navbar-collapse
       ul.nav.navbar-nav
-        li(class=(title === 'Home') ? 'active' : undefined)
-          a(href='/') Home
-        li(class=(title === 'Profile') ? 'active' : undefined)
-          a(href='/api') Profile
-        //li(class=(title === 'Contact') ? 'active' : undefined)
-          //a(href='/contact') Contact
-        //li
-          //a(href='/status') Status
+        if(user)
+          li(class=(title === 'Home') ? 'active' : undefined)
+            a(href='/common/' + user.id) Home
+        else
+          li(class=(title === 'Home') ? 'active' : undefined)
+            a(href='/') Home
+        li(class=(title === 'About Us') ? 'active' : undefined)
+            a(href='#') About Us
       ul.nav.navbar-nav.navbar-right
         if !user
           li(class=(title === 'Login') ? 'active' : undefined)
