@@ -7,9 +7,9 @@ $(document).ready(() => {
 	    server: "http://localhost:8080"
 	};
 
-	if (process.env.NODE_ENV === 'production') {
-	    apiOptions.server = "https://nameless-basin-42853.herokuapp.com";
-	}
+	// if (env.NODE_ENV === 'production') {
+	//     apiOptions.server = "https://nameless-basin-42853.herokuapp.com";
+	// }
 	var items = [];
 
 	$(function(){
@@ -17,7 +17,7 @@ $(document).ready(() => {
 		console.log('inside of ajax')
 		$.ajax({
 			type:'GET',
-			data: JSON.stringify(data),
+			data: JSON.stringify(items),
 			contentType: 'application/json',
 	        url: apiOptions.server + path,						
 	        success: function(data) {

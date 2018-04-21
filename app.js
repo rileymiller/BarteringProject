@@ -13,6 +13,7 @@ const dotenv = require('dotenv');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('express-flash');
 const path = require('path');
+// const reload = require ('../../reload');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const expressValidator = require('express-validator');
