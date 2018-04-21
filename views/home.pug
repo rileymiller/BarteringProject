@@ -1,26 +1,73 @@
 extends layout
 block content
-  h1 Hackathon Starter
-  p.lead A boilerplate for Node.js web applications.
-  hr
-  .row
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
-    .col-sm-6
-      h2 Heading
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p
-        a.btn.btn-default(href='#', role='button') View details »
+  h1 Last 25 Items Listed
+  //the_modal
+  div.modal.fade(id='new-item')
+    div.modal-dialog.modal-md
+      div.modal-content
+        div.modal-header
+          h4.modal-title Create a new item listing
+          div.modal-body
+            form(action="/"+req.params.userid+"/item", method="post", role="form")
+              p Item name
+              input(type="text", name="name")
+              p Category
+              select(name="category")
+                option Textbook
+                option Furniture
+                option Testing supplies
+              p Starting bid
+              input(type="number", min="0", name="price")
+              p Description
+              input(type="text", name="description")
+              br
+              br
+              button.btn.btn-success.btn-md(type="submit") List this item
+          div.modal-footer
+            button.btn.btn-danger(data-dismiss='modal') Cancel
+  //the_button
+  button.btn.btn-default(data-toggle='modal', data-target='#new-item') New item
+
+  //the_second_modal
+  div.modal.fade(id='categorize')
+    div.modal-dialog.modal-md
+      div.modal-content
+        div.modal-header
+          h4.modal-title Organize recent listings
+          div.modal-body
+            form(action="", method="post", role="form")
+              p Category
+              select(name="category")
+                option Textbook
+                option Furniture
+                option Testing supplies
+              br
+              br
+              button.btn.btn-success.btn-md(type="submit") Organize
+          div.modal-footer
+            button.btn.btn-danger(data-dismiss='modal') Cancel
+  //the_button
+  button.btn.btn-default(data-toggle='modal', data-target='#categorize') Categorize
+  //p.lead A boilerplate for Node.js web applications.
+  //hr
+  //.row
+    //.col-sm-6
+      //h2 Heading
+      //p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      //p
+        //a.btn.btn-default(href='#', role='button') View details »
+    //.col-sm-6
+      //h2 Heading
+      //p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      //p
+        //a.btn.btn-default(href='#', role='button') View details »
+    //.col-sm-6
+      //h2 Heading
+      //p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      //p
+        //a.btn.btn-default(href='#', role='button') View details »
+    //.col-sm-6
+      //h2 Heading
+      //p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+      //p
+        //a.btn.btn-default(href='#', role='button') View details »
