@@ -12,6 +12,9 @@ const randomBytesAsync = promisify(crypto.randomBytes);
  */
 exports.getLogin = (req, res) => {
   if (req.user) {
+    console.log('inside controllers/getLogin');
+    console.log(req.user.id);
+
     return res.redirect('/');
   }
   res.render('account/login', {
@@ -44,7 +47,11 @@ exports.postLogin = (req, res, next) => {
     req.logIn(user, (err) => {
       if (err) { return next(err); }
       req.flash('success', { msg: 'Success! You are logged in.' });
-      res.redirect(req.session.returnTo || '/');
+      console.log('inside passport authenticate, logging in user');
+      console.log(user);
+      console.log(user.id);
+      res.redirect('/common/' + user.id);
+      //res.redirect(req.session.returnTo || '/common/' + user.id);
     });
   })(req, res, next);
 };
@@ -109,7 +116,10 @@ exports.postSignup = (req, res, next) => {
         if (err) {
           return next(err);
         }
-        res.redirect('/');
+          console.log('inside passport authenticate, logging in user');
+          console.log(user);
+          console.log(user.id);
+          res.redirect('/common/' + user.id);
       });
     });
   });

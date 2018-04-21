@@ -8,3 +8,8 @@ db.users.find({ 'sale': {$elemMatch:  {name: 'itemname7'} } }, {email: 1, "sale.
 
 db.users.aggregate([{ $unwind: "$sale" }, { $project: {email: 1, _id: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created"} }, {$match: {item_name: 'itemname7'}}]).pretty();
 
+#sorts by item_created date Ascending order
+db.users.aggregate([{ $unwind: "$sale" }, { $project: {email: 1, _id: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created"} }, { $sort: {item_create: -1} }]).pretty();
+
+#it actually works
+db.users.aggregate([{ $unwind: "$sale" }, { $project: {email: 1, _id: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created"} }, { $sort: {item_create: -1} }, {$limit : 5}]).pretty();
