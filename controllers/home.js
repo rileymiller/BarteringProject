@@ -32,13 +32,37 @@ exports.index = (req, res) => {
 exports.common = (req,res) => {
 	console.log('inside common in home.js');
 	console.log(req.params.userid);
-	getRecentItems(req, res, function(req, res, responseData) {
+	
+	getUser(req, res, function(req, res, responseData) {
 		renderCommonArea(req, res, responseData);
-	})
+	});
+
+
 	
 };
 
+var getUser = (req, res, callback) => {
+	var requestOptions, path;
+	console.log('inside getUser');
+    path = "/usersanditems/user/" + req.params.userid;
+    requestOptions = {
+        url: apiOptions.server + path,
+        method: "GET",
+        json: {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            var data = body;
+            if (response.statusCode === 200) {
 
+                callback(req, res, data);
+            } else {
+                _showError(req, res, response.statusCode);
+            }
+        }
+    );
+};
 
 var renderCommonArea = (req,res, responseData) => {
 	console.log('inside renderCommonArea');

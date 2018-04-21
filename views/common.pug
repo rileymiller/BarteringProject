@@ -1,7 +1,10 @@
 extends layout
 
 block content
-  script(src="../public/js/home.js")
+  script(src="http://code.jquery.com/jquery-1.6.2.min.js")
+  script(src="/js/common.js")
   h1 #{title} Area
   p.lead This is where our common area is gonna be
   p #{items}
+  script.
+     items='#{items}';
