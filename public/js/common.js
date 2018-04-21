@@ -9,6 +9,7 @@ $(document).ready(() => {
 	var server = window.location.origin;
 
 
+
 	// if (process.env.NODE_ENV === 'production') {
 	//     apiOptions.server = "https://nameless-basin-42853.herokuapp.com";
 	// }
