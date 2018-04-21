@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 Item: #{item.name}
+    h4 Current bid: $#{item.price}
+    p Date listed: #{item.date}
+    p Status: #{item.status}
+    p Description:
+    p &nbsp &nbsp &nbsp #{item.description}
+    p Category: #{item.category}
+    form(action="", method="post", role="form")
+      button.btn.btn-success(type="submit") Buy
