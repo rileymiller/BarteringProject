@@ -45,19 +45,22 @@ var drawSVG = () => {
 	console.log(items);
 	console.log(typeof(items));
 
-	var width = 960
-	var height = 500
+	var width = 1100
+	var height = 600
 
 	var numParticles = 20
 	var maxVelocity = 8
 
-	//var color = d3.scaleOrdinal().range(d3.schemeCategory20)
+	// var color = d3.scaleOrdinal().domain(items).range(d3.schemeCategory20)
+	var color = d3.scaleOrdinal(d3.schemeCategory10);
+	console.log(d3.schemeCategory10);
+	console.log(color)
 
 	
 	//var color = '#000';
 	var nodes = Array.apply(null, Array(numParticles)).map(function (_, i) {
 	    var size = Math.random() * 60 + 20
-	    var velocity = Math.random() * 2 + 1
+	    var velocity = Math.random() * 1.5 + 1
 	    var angle = Math.random() * 360
 
 	    return {
