@@ -75,6 +75,7 @@ exports.logout = (req, res) => {
  */
 exports.getSignup = (req, res) => {
   if (req.user) {
+    console.log('get signup');
     return res.redirect('/');
   }
   res.render('account/signup', {

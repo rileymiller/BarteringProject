@@ -19,10 +19,25 @@ if (process.env.NODE_ENV === 'production') {
  */
 exports.index = (req, res) => {
   console.log('inside index in home.js');
+  //console.log(req.params.userid);
   res.render('home', {
     title: 'Home'
   });
 };
+
+/**
+* redirect from OAuth2.0 session from Google as of now
+*
+*/
+
+exports.newcommon = (req,res) => {
+    console.log('inside newcommon')
+    var items_blank = [];
+    res.render('common', {
+        title: 'common',
+        items: items_blank
+      });
+}
 
 /**
 * GET /:userid
