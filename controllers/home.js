@@ -24,6 +24,15 @@ exports.index = (req, res) => {
   });
 };
 
+
+exports.newcommon = (req,res) => {
+    var responseData = [];
+    res.render('common', {
+        title: 'common',
+        items: responseData
+      });
+}
+
 /**
 * GET /:userid
 * Common Page

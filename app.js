@@ -129,6 +129,7 @@ app.use('/usersanditems', routeApi);
  */
 app.get('/', homeController.index);
 app.get('/common/:userid', homeController.common)
+app.get('/newcommon', homeController.newcommon)
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -196,7 +197,7 @@ app.get('/auth/github/callback', passport.authenticate('github', { failureRedire
 });
 app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
+  res.redirect('/newcommon');
 });
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), (req, res) => {
