@@ -40,14 +40,14 @@ var doAddItem = function(req, res, user) {
         console.log('inside of doAddItem');
         console.log(user);
         console.log(req.body);
-        user.push({
+        user.sale.push({
             name: req.body.name,
             category: req.body.category,
             description: req.body.description,
             price: req.body.price
         });
 
-        item.save(function(err, item) {
+        user.save(function(err, item) {
             var thisItem;
             if (err) {
                 console.log(err);

@@ -65,6 +65,7 @@ $(document).ready(() => {
 	        success: function(data) {
 	            console.log('success creating new item');
 	            $('#new-item-modal').modal('hide');
+	            clearModal();
 	        }, error: function(d) {
 	        	console.log(d);
 	        }
@@ -78,12 +79,11 @@ $(document).ready(() => {
     //clears the modal
     function clearModal() {
         //  alert('modal clearing, active_form: ' + active_form);
-        $('#modal_title').text("Create New Point");
-        $(active_form + ' #number-input').val("");
-        $(active_form + ' div#selectHead .form-control').val("");
-        $(active_form + ' #exampleTextarea').val("");
-        $(active_form + ' #prioritySelect').val("Medium");
-        $('#catSelect').val("");
+        $('#name').val("");
+        $('#price').val("");
+        $('#category').val("");
+        $('#description').val("Medium");
+
     }
 
 

@@ -36,7 +36,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
-const routeApi = require('./api/routes/index');
+
 
 /**
  * API keys and Passport configuration.
@@ -48,7 +48,7 @@ const passportConfig = require('./config/passport');
  */
 const app = express();
 
-app.use('/usersanditems', routeApi);
+
 
 /**
  * Connect to MongoDB.
@@ -120,6 +120,9 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+
+const routeApi = require('./api/routes/index');
+app.use('/usersanditems', routeApi);
 
 /**
  * Primary app routes.
