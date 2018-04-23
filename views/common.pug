@@ -6,31 +6,40 @@ block content
   script(src="/js/common.js")
 
   h1 Last 25 Items Listed
-  div.modal.fade(id='new-item')
+  div.modal.fade(id='new-item-modal' tabindex="-1" aria-hidden="true")
     div.modal-dialog.modal-md
       div.modal-content
-        div.modal-header
-          h4.modal-title Create a new item listing
-          div.modal-body
-            form(action="/"+user.id+"/item", method="post", role="form")
-              p Item name
-              input(type="text", name="name")
-              p Category
-              select(name="category")
-                option Textbook
-                option Furniture
-                option Testing supplies
-              p Starting bid
-              input(type="number", min="0", name="price")
-              p Description
-              input(type="text", name="description")
-              br
-              br
-              button.btn.btn-success.btn-md(type="submit") List this item
-          div.modal-footer
-            button.btn.btn-danger(data-dismiss='modal') Cancel
+        .modal-header
+          h3.modal-title(style="display:inline;") Create New Item
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') ×
+        div.modal-body
+          form(id="new-item", onsubmit="return false;")
+            div#error.noerror
+            div#id.noerror=user.id
+            .form-group
+              label(for='name') Name
+              input#name.form-control(type='text', name='name', placeholder='John Doe' required)
+            .form-group
+              label(for='price') Price
+              input#price.form-control(type='number', name='price', placeholder=0 required)
+            .form-group
+              label(for='category') Category
+              select#category.form-control
+                option Other
+                option Textbooks
+                option Living
+                option Transportation
+                option Relationship
+            .form-group
+              label(for='description') Description
+              textarea#description.form-control(rows='4')
+          .modal-footer
+            button#submit.btn.btn-primary(type='button') List New Item
+            button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+
   //the_button
-  button.btn.btn-default(data-toggle='modal', data-target='#new-item') New item
+  button.btn.btn-default(data-toggle='modal', data-target='#new-item-modal') New item
 
   //the_second_modal
   div.modal.fade(id='categorize')

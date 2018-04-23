@@ -1,4 +1,6 @@
 var items = [];
+var userid;
+var server;
 
 $(document).ready(() => {
 
@@ -8,17 +10,15 @@ $(document).ready(() => {
 	    server: "http://localhost:8080"
 	};*/
 
-	var server = window.location.origin;
-
-
-
+	userid = $('#id').text();
+	userid.replace(/\s+/g, '');
 	// if (process.env.NODE_ENV === 'production') {
 	//     apiOptions.server = "https://nameless-basin-42853.herokuapp.com";
 	// }
-	 
+	 server = window.location.origin;
 	 console.log(window.location.origin);
 	$(function(){
-		path = "/usersanditems/recentItems";
+		var path = "/usersanditems/recentItems";
 		console.log('inside of ajax')
 		$.ajax({
 			type:'GET',
@@ -36,9 +36,55 @@ $(document).ready(() => {
 	});
 
 
+	$('button#submit').on('click', function(e) {
+		console.log('form submit button clicked');
+		e.preventDefault();
+
+		console.log(userid);
+		var name = $('#name').val();
+		var category = $('#category').val();
+		var price = $('#price').val();
+		var description = $('#description').val();
+
+		console.log("name: " + name + ", category: " + category + ", price: " + price + ", description: " + description);
+
+		if(name == '' || category == '' || price == '' || description ==''){
+			$('#error').append('<div class=\"alert alert-danger\" role=\"alert\">All fields must be filled out!</div>')
+			.attr('class', 'error');
+		} else {
+			$('#error').attr('class', 'noerror');
+			var path = "/usersanditems/" + userid + '/item';
+			console.log(window.location.href);
+			//console.log(user.id);
+
+			$.ajax({
+			type:'POST',
+			contentType: 'application/json',
+	        url: server + path,
+	        data: JSON.stringify({name: name, category: category, description: description, price: price}),						
+	        success: function(data) {
+	            console.log('success creating new item');
+	            $('#new-item-modal').modal('hide');
+	        }, error: function(d) {
+	        	console.log(d);
+	        }
+		});
+		}
+	}) 
 	//console.log(items);
 
 });
+
+    //clears the modal
+    function clearModal() {
+        //  alert('modal clearing, active_form: ' + active_form);
+        $('#modal_title').text("Create New Point");
+        $(active_form + ' #number-input').val("");
+        $(active_form + ' div#selectHead .form-control').val("");
+        $(active_form + ' #exampleTextarea').val("");
+        $(active_form + ' #prioritySelect').val("Medium");
+        $('#catSelect').val("");
+    }
 
 
 var drawSVG = () => {
@@ -51,10 +97,8 @@ var drawSVG = () => {
 	var numParticles = 20
 	var maxVelocity = 8
 
-	//var color = d3.scaleOrdinal().range(d3.schemeCategory20)
+	var color = d3.scaleOrdinal().range(d3.schemeCategory20)
 
-	
-	//var color = '#000';
 	var nodes = Array.apply(null, Array(numParticles)).map(function (_, i) {
 	    var size = Math.random() * 60 + 20
 	    var velocity = Math.random() * 2 + 1

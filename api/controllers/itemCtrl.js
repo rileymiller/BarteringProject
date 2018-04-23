@@ -37,15 +37,14 @@ var doAddItem = function(req, res, user) {
     if (!user) {
         sendJsonResponse(res, 404, "userid not found");
     } else {
-
+        console.log('inside of doAddItem');
         console.log(user);
         console.log(req.body);
         user.push({
             name: req.body.name,
             category: req.body.category,
             description: req.body.description,
-            price: req.body.price,
-            status: req.body.status
+            price: req.body.price
         });
 
         item.save(function(err, item) {
