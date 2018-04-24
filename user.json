@@ -24,7 +24,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -32,7 +33,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -61,7 +63,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -69,7 +72,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -98,7 +102,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -106,7 +111,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -135,7 +141,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -143,7 +150,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -172,7 +180,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -180,7 +189,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -209,7 +219,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -217,7 +228,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -246,7 +258,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -254,7 +267,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -283,7 +297,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -291,7 +306,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -320,7 +336,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -328,7 +345,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -357,7 +375,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -365,7 +384,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -394,7 +414,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -402,7 +423,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -431,7 +453,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -439,7 +462,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -468,7 +492,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -476,7 +501,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -505,7 +531,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -513,7 +540,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -542,7 +570,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -550,7 +579,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -579,7 +609,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -587,7 +618,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -616,7 +648,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -624,7 +657,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -653,7 +687,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -661,7 +696,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -690,7 +726,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -698,7 +735,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -727,7 +765,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -735,7 +774,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -764,7 +804,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -772,7 +813,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -801,7 +843,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -809,7 +852,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -838,7 +882,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -846,7 +891,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -875,7 +921,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -883,7 +930,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -912,7 +960,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -920,7 +969,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -949,7 +999,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -957,7 +1008,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -986,7 +1038,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -994,7 +1047,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 },
 {
@@ -1023,7 +1077,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }],
   "bought":  [{
     "_id": new ObjectId(),
@@ -1031,7 +1086,8 @@
     "category": "category",
     "created": new Date(),
     "price": "price",
-    "status": "status"
+    "status": "status",
+    "description": "Here's a short description"
   }]
 }
 ]
