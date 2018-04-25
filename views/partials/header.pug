@@ -13,7 +13,7 @@
       ul.nav.navbar-nav
         if(user)
           li(class=(title === 'Item Listings') ? 'active' : undefined)
-            a(href='/common/' + user.id) Home
+            a(href='/common/' + user.id) Item Listings
         else
           li(class=(title === 'Home') ? 'active' : undefined)
             a(href='/') Home
