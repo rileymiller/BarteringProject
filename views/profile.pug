@@ -5,6 +5,42 @@ block content
   p Location: #{p_user.profile.location}
   p Website: #{p_user.profile.website}
   p Gender: #{p_user.profile.gender}
+  if(user._id == p_user._id)
+    div.modal.fade(id='new-item-modal' tabindex="-1" aria-hidden="true")
+      div.modal-dialog.modal-md
+        div.modal-content
+          .modal-header
+            h3.modal-title(style="display:inline;") Create New Item
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+          div.modal-body
+            form(id="new-item", onsubmit="return false;")
+              div#error.noerror
+              div#id.noerror=user.id
+              .form-group
+                label(for='name') Name
+                input#name.form-control(type='text', name='name', placeholder='Calculus Tutoring' required)
+              .form-group
+                label(for='price') Price
+                input#price.form-control(type='number', name='price', placeholder=0 required)
+              .form-group
+                label(for='category') Category
+                select#category.form-control
+                  option Other
+                  option Tutoring
+                  option Textbooks
+                  option Living
+                  option Transportation
+                  option Relationship
+              .form-group
+                label(for='description') Description
+                textarea#description.form-control(rows='4')
+            .modal-footer
+              button#submit.btn.btn-primary(type='button') List New Item
+              button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+  
+    //the_button
+    button.btn.btn-default(data-toggle='modal', data-target='#new-item-modal') New item
   br
   br
   p Items for sale:
@@ -16,7 +52,8 @@ block content
         p &nbsp &nbsp &nbsp #{item.description}
       if(user._id == p_user._id)
         div.col-sm-4
-        p I am logged in LOLOLaergjoeg
+          form(id="delete-item", onsubmit="return false;")
+            button#submit.btn.btn-danger(type='button') Delete item
   br
   p Items bought:
   each item in p_user.bought
@@ -27,5 +64,7 @@ block content
         p &nbsp &nbsp &nbsp #{item.description}
       if(user._id == p_user._id)
         div.col-sm-4
-        p I am logged in LOLOLaergjoeg
+          form(id="delete-item", onsubmit="return false;")
+            button#submit.btn.btn-danger(type='button') Delete item
+
 
