@@ -33,6 +33,24 @@ exports.newcommon = (req,res) => {
       });
 }
 
+exports.profile = (req, res) => {
+	console.log('inside profile');
+	console.log(req.params.userid);
+	
+	getUser(req, res, function(req, res, responseData) {
+		renderProfile(req, res, responseData);
+	});
+};
+
+var renderProfile = (req,res, responseData) => {
+	console.log('inside renderProfile');
+	console.log(responseData);
+	res.render('profile', {
+	    title: 'profile',
+	    p_user: responseData
+	  });
+}
+
 /**
 * GET /:userid
 * Common Page
@@ -81,6 +99,56 @@ var renderCommonArea = (req,res, responseData) => {
 	    items: responseData
 	  });
 }
+
+/**
+* GET /:itemid
+*
+*/
+exports.item = (req,res) => {
+	console.log('inside item');
+	console.log(req.params.itemid);
+	console.log(req.params.userid);
+
+	getSingleItem(req, res, function(req, res, responseData) {
+		renderItem(req, res, responseData);
+	});
+
+
+	
+};
+
+var getSingleItem = (req, res, callback) => {
+	var requestOptions, path;
+	console.log('inside getSingleItem');
+    path = "/usersanditems/item/" + req.params.userid + "/" + req.params.itemid;
+    requestOptions = {
+        url: apiOptions.server + path,
+        method: "GET",
+        json: {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            var data = body;
+            if (response.statusCode === 200) {
+
+                callback(req, res, data);
+            } else {
+                _showError(req, res, response.statusCode);
+            }
+        }
+    );
+};
+
+var renderItem = (req,res, responseData) => {
+	console.log('inside renderItem');
+	console.log(responseData);
+	res.render('item', {
+	    title: 'item',
+	    item: responseData
+	  });
+}
+
 
 var sendJsonResponse = function(res, status, content) {
     res.status(status);
