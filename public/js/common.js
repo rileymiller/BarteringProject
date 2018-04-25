@@ -22,23 +22,7 @@ $(document).ready(() => {
 	server = window.location.origin;
 	console.log(window.location.origin);
 
-	$(function(){
-		var path = "/usersanditems/recentItems";
-		console.log('inside of get recentItems')
-		$.ajax({
-			type:'GET',
-			contentType: 'application/json',
-	        url: server + path,						
-	        success: function(data) {
-	            console.log('success');
-	            // console.log(JSON.stringify(data));
-	            // console.log(data);
-	            items = data;
-	            // console.log(typeof(data));
-	            drawSVG();
-	        }
-		});
-	});
+	getRecentItems();
 
 	$('button#submit').on('click', function(e) {
 		console.log('form submit button clicked');
@@ -71,6 +55,9 @@ $(document).ready(() => {
 		            $('#new-item-modal').modal('hide');
 		            socket.emit('item created', data);
 		            clearModal();
+		            $('#blockCanvas').remove();
+		            getRecentItems();
+
 		        }, error: function(d) {
 		        	console.log(d);
 		        }
@@ -98,6 +85,25 @@ $(document).ready(() => {
 
     }
 
+var getRecentItems = () => {
+		$(function(){
+			var path = "/usersanditems/recentItems";
+			console.log('inside of get recentItems')
+			$.ajax({
+				type:'GET',
+				contentType: 'application/json',
+		        url: server + path,						
+		        success: function(data) {
+		            console.log('success');
+		            // console.log(JSON.stringify(data));
+		            // console.log(data);
+		            items = data;
+		            // console.log(typeof(data));
+		            drawSVG();
+		        }
+			});
+		});
+}
 
 var drawSVG = () => {
 	console.log(items);
@@ -151,6 +157,7 @@ var drawSVG = () => {
 	var g = svg
 		.attr('width', width)
 	    .attr('height', height)
+	    .attr('id', 'blockCanvas')
 		.selectAll('g')
 		.data(nodes)
 	    .enter().append('g')
