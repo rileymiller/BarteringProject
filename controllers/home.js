@@ -57,7 +57,7 @@ var renderProfile = (req,res, responseData) => {
  */
 exports.about = (req, res) => {
     console.log('inside index in home.js');
-    res.render('About', {
+    res.render('about', {
       title: 'About'
     });
   };
