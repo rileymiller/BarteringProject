@@ -57,6 +57,7 @@ const passportConfig = require('./config/passport');
 const app = express();
 var http = require('http');
 var server = http.createServer(app);
+console.log(server)
 var io = require('socket.io').listen(server);
 
 
@@ -146,6 +147,8 @@ app.get('/', homeController.index);
 app.get('/common/:userid', homeController.common);
 app.get('/newcommon', homeController.newcommon);
 app.get('/recentItems', homeController.recentItems);
+app.get('/:userid/item/:itemid', homeController.item);
+app.get('/:userid/profile', homeController.profile);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -166,7 +169,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /**
  * API examples routes.
  */
-app.get('/api', apiController.getApi);
+/*app.get('/api', apiController.getApi);
 app.get('/api/lastfm', apiController.getLastfm);
 app.get('/api/nyt', apiController.getNewYorkTimes);
 app.get('/api/aviary', apiController.getAviary);
@@ -194,7 +197,7 @@ app.get('/api/upload', apiController.getFileUpload);
 app.post('/api/upload', upload.single('myFile'), apiController.postFileUpload);
 app.get('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getPinterest);
 app.post('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.postPinterest);
-app.get('/api/google-maps', apiController.getGoogleMaps);
+app.get('/api/google-maps', apiController.getGoogleMaps);*/
 
 /**
  * OAuth authentication routes. (Sign in)
