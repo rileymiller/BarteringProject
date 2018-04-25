@@ -30,8 +30,19 @@ exports.newcommon = (req,res) => {
     res.render('common', {
         title: 'common',
         items: responseData
-      });
+    });
 }
+
+/**
+ * GET /
+ * About Us page
+ */
+exports.about = (req, res) => {
+    console.log('inside index in home.js');
+    res.render('About', {
+      title: 'About'
+    });
+  };
 
 /**
 * GET /:userid
