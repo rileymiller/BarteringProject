@@ -217,22 +217,11 @@ var drawSVG = () => {
 	    .append('text')
 	    .attr('x', function (d) { return d.x + 15 })
 	    .attr('y', function (d) { return d.y + 25 })
-		.text(function (d) { 
-			console.log(d.user_name)
-			return d.user_name })
+		.text(function (d) { return d.user_name })
 		.attr("fill","#FFF")
         .attr("text-anchor","left")
         .style("font-size", "16px")
         .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
-
-	// d3.selectAll("g").each( function(d, i){
-	// 	// document.getElementById("g").appendChild(newText);
- //    	console.log(
- //    		'email: ',d3.select(this).attr("email"),
- //    		'description: ', d3.select(this).attr("description"),
- //    	 );
-  		
-	// })
 
 	var collisionForce = rectCollide()
 	    .size(function (d) { return [d.size, d.size] })

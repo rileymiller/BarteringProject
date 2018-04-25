@@ -30,7 +30,7 @@ exports.newcommon = (req,res) => {
     res.render('common', {
         title: 'common',
         items: responseData
-      });
+    });
 }
 
 exports.profile = (req, res) => {
@@ -50,6 +50,17 @@ var renderProfile = (req,res, responseData) => {
 	    p_user: responseData
 	  });
 }
+
+/**
+ * GET /
+ * About Us page
+ */
+exports.about = (req, res) => {
+    console.log('inside index in home.js');
+    res.render('about', {
+      title: 'About'
+    });
+  };
 
 /**
 * GET /:userid
