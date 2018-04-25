@@ -5,7 +5,7 @@ var socket;
 
 $(document).ready(() => {
 
-	 socket = io();
+	socket = io();
 	 
 	console.log('inside common.js');
 	
@@ -75,6 +75,12 @@ $(document).ready(() => {
 	        }
 		});
 		}
+	});
+
+
+	socket.on('connect', () => {
+		console.log('connected to websocket');
+
 	});
 
 	//

@@ -2,7 +2,7 @@
  * Module dependencies.
  */
 const express = require('express');
-
+const http = require('http');
 const compression = require('compression');
 const session = require('express-session');
 const bodyParser = require('body-parser');
@@ -55,7 +55,6 @@ const passportConfig = require('./config/passport');
  * Create Express server.
  */
 const app = express();
-var http = require('http');
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 
