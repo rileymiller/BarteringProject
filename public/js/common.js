@@ -164,7 +164,7 @@ var drawSVG = () => {
 	    .style('ry', '15px')
 
 	var name = g.append('a')
-		.attr("xlink:href", "http://en.wikipedia.org/")
+		.attr("xlink:href", function (d) { return server + '/' + d.user_id + "/item/" + d.item_id })
 	    .append('text')
 	    .attr('x', function (d) { return d.x + 15 })
 	    .attr('y', function (d) { return d.y + 25 })
@@ -194,7 +194,7 @@ var drawSVG = () => {
         .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
 
     var username = g.append('a')
-		.attr("xlink:href", "http://en.wikipedia.org/")
+		.attr("xlink:href", function (d) { return server + '/' + d.user_id + '/profile' })
 	    .append('text')
 	    .attr('x', function (d) { return d.x + 15 })
 	    .attr('y', function (d) { return d.y + 25 })
