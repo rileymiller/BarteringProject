@@ -36,7 +36,7 @@ const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
-const routeApi = require('./api/routes/index');
+
 
 /**
  * API keys and Passport configuration.
@@ -48,7 +48,7 @@ const passportConfig = require('./config/passport');
  */
 const app = express();
 
-app.use('/usersanditems', routeApi);
+
 
 /**
  * Connect to MongoDB.
@@ -91,13 +91,14 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-app.use((req, res, next) => {
+
+/*app.use((req, res, next) => {
   if (req.path === '/api/upload') {
     next();
   } else {
     lusca.csrf()(req, res, next);
   }
-});
+});*/
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
 app.use((req, res, next) => {
@@ -120,11 +121,17 @@ app.use((req, res, next) => {
 });
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
+const routeApi = require('./api/routes/index');
+app.use('/usersanditems', routeApi);
+
 /**
  * Primary app routes.
  */
 app.get('/', homeController.index);
 app.get('/common/:userid', homeController.common)
+app.get('/newcommon', homeController.newcommon)
+app.get('/:userid/item/:itemid', homeController.item);
+app.get('/:userid/profile', homeController.profile);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
@@ -145,7 +152,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 /**
  * API examples routes.
  */
-app.get('/api', apiController.getApi);
+/*app.get('/api', apiController.getApi);
 app.get('/api/lastfm', apiController.getLastfm);
 app.get('/api/nyt', apiController.getNewYorkTimes);
 app.get('/api/aviary', apiController.getAviary);
@@ -173,7 +180,7 @@ app.get('/api/upload', apiController.getFileUpload);
 app.post('/api/upload', upload.single('myFile'), apiController.postFileUpload);
 app.get('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getPinterest);
 app.post('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.postPinterest);
-app.get('/api/google-maps', apiController.getGoogleMaps);
+app.get('/api/google-maps', apiController.getGoogleMaps);*/
 
 /**
  * OAuth authentication routes. (Sign in)
@@ -192,7 +199,7 @@ app.get('/auth/github/callback', passport.authenticate('github', { failureRedire
 });
 app.get('/auth/google', passport.authenticate('google', { scope: 'profile email' }));
 app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
-  res.redirect(req.session.returnTo || '/');
+  res.redirect('/newcommon');
 });
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', passport.authenticate('twitter', { failureRedirect: '/login' }), (req, res) => {

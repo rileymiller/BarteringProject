@@ -1,6 +1,7 @@
 var items = [];
 var user = {};
 var server = window.location.origin;
+var userid;
 
 $(document).ready(() => {
 
@@ -9,15 +10,15 @@ $(document).ready(() => {
 	/*var apiOptions = {
 	    server: "http://localhost:8080"
 	};*/
-
-
+	userid = $('#id').text();
+	userid.replace(/\s+/g, '');
 	// if (process.env.NODE_ENV === 'production') {
 	//     apiOptions.server = "https://nameless-basin-42853.herokuapp.com";
 	// }
-	 
-	 // console.log(window.location.origin);
+	 server = window.location.origin;
+	 console.log(window.location.origin);
 	$(function(){
-		path = "/usersanditems/recentItems";
+		var path = "/usersanditems/recentItems";
 		console.log('inside of ajax')
 		$.ajax({
 			type:'GET',
@@ -34,9 +35,55 @@ $(document).ready(() => {
 		});
 	});
 
+	$('button#submit').on('click', function(e) {
+		console.log('form submit button clicked');
+		e.preventDefault();
+
+		console.log(userid);
+		var name = $('#name').val();
+		var category = $('#category').val();
+		var price = $('#price').val();
+		var description = $('#description').val();
+
+		console.log("name: " + name + ", category: " + category + ", price: " + price + ", description: " + description);
+
+		if(name == '' || category == '' || price == '' || description ==''){
+			$('#error').append('<div class=\"alert alert-danger\" role=\"alert\">All fields must be filled out!</div>')
+			.attr('class', 'error');
+		} else {
+			$('#error').attr('class', 'noerror');
+			var path = "/usersanditems/" + userid + '/item';
+			console.log(window.location.href);
+			//console.log(user.id);
+
+			$.ajax({
+			type:'POST',
+			contentType: 'application/json',
+	        url: server + path,
+	        data: JSON.stringify({name: name, category: category, description: description, price: price}),						
+	        success: function(data) {
+	            console.log('success creating new item');
+	            $('#new-item-modal').modal('hide');
+	            clearModal();
+	        }, error: function(d) {
+	        	console.log(d);
+	        }
+		});
+		}
+	}) 
 	//console.log(items);
 
 });
+
+    //clears the modal
+    function clearModal() {
+        //  alert('modal clearing, active_form: ' + active_form);
+        $('#name').val("");
+        $('#price').val("");
+        $('#category').val("");
+        $('#description').val("Medium");
+
+    }
 
 
 var drawSVG = () => {
@@ -54,8 +101,6 @@ var drawSVG = () => {
 	// console.log(d3.schemeCategory10);
 	// console.log(color)
 
-	
-	//var color = '#000';
 	var nodes = Array.apply(null, Array(numParticles)).map(function (_, i) {
 	    // var size = Math.random() * 60 + 20
 	    var size = 200

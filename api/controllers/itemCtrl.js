@@ -37,18 +37,20 @@ var doAddItem = function(req, res, user) {
     if (!user) {
         sendJsonResponse(res, 404, "userid not found");
     } else {
-
+        console.log('inside of doAddItem');
         console.log(user);
         console.log(req.body);
-        user.push({
+        var d = new Date();
+        user.sale.push({
             name: req.body.name,
             category: req.body.category,
             description: req.body.description,
             price: req.body.price,
-            status: req.body.status
+            status: 'Available',
+            date: d
         });
 
-        item.save(function(err, item) {
+        user.save(function(err, item) {
             var thisItem;
             if (err) {
                 console.log(err);
