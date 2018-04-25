@@ -8,12 +8,12 @@
         span.icon-bar
       a.navbar-brand(href='/')
         i.fas.fa-cube
-        | Mines Barter
+        | The Mine Cart
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         if(user)
-          li(class=(title === 'Home') ? 'active' : undefined)
-            a(href='/common/' + user.id) Home
+          li(class=(title === 'Item Listings') ? 'active' : undefined)
+            a(href='/common/' + user.id) Item Listings
         else
           li(class=(title === 'Home') ? 'active' : undefined)
             a(href='/') Home
@@ -36,7 +36,7 @@
               i.caret
             ul.dropdown-menu
               li
-                a(href='#') My Account
+                a(href='/'+user._id+'/profile') My Profile
               li.divider
               li
                 a(href='/account') Settings

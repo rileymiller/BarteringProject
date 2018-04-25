@@ -11,7 +11,9 @@ const itemsSchema = new mongoose.Schema({
   name: {type: String, required: true},
   category: String,
   description: String,
-  price: Number
+  price: Number,
+  status: String,
+  date: String
 })
 
 const userSchema = new mongoose.Schema({
