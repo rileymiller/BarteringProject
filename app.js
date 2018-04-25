@@ -147,6 +147,7 @@ app.get('/', homeController.index);
 app.get('/common/:userid', homeController.common);
 app.get('/newcommon', homeController.newcommon);
 app.get('/recentItems', homeController.recentItems);
+app.get('/about', homeController.about)
 app.get('/:userid/item/:itemid', homeController.item);
 app.get('/:userid/profile', homeController.profile);
 app.get('/login', userController.getLogin);
@@ -198,6 +199,7 @@ app.post('/api/upload', upload.single('myFile'), apiController.postFileUpload);
 app.get('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.getPinterest);
 app.post('/api/pinterest', passportConfig.isAuthenticated, passportConfig.isAuthorized, apiController.postPinterest);
 app.get('/api/google-maps', apiController.getGoogleMaps);*/
+
 
 /**
  * OAuth authentication routes. (Sign in)
