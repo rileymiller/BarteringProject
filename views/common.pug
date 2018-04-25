@@ -6,7 +6,7 @@ block content
   script(src="/socket.io/socket.io.js")
   script(src="/js/common.js")
   
-  h1 Last 25 Items Listed
+  h1 Items Listed (10 displayed max)
 
   div.modal.fade(id='new-item-modal' tabindex="-1" aria-hidden="true")
     div.modal-dialog.modal-md
@@ -45,24 +45,24 @@ block content
   button.btn.btn-default(data-toggle='modal', data-target='#new-item-modal') New item
 
   //the_second_modal
-  div.modal.fade(id='categorize')
-    div.modal-dialog.modal-md
-      div.modal-content
-        div.modal-header
-          h4.modal-title Organize recent listings
-          div.modal-body
-            form(action="", method="post", role="form")
-              p Category
-              select(name="category")
-                option Textbook
-                option Furniture
-                option Testing supplies
-              br
-              br
-              button.btn.btn-success.btn-md(type="submit") Organize
-          div.modal-footer
-            button.btn.btn-danger(data-dismiss='modal') Cancel
+  //div.modal.fade(id='categorize')
+    //div.modal-dialog.modal-md
+      //div.modal-content
+        //div.modal-header
+          //h4.modal-title Organize recent listings
+          //div.modal-body
+            //form(action="", method="post", role="form")
+              //p Category
+              //select(name="category")
+                //option Textbook
+                //option Furniture
+                //option Testing supplies
+              //br
+              //br
+              //button.btn.btn-success.btn-md(type="submit") Organize
+          //div.modal-footer
+            //button.btn.btn-danger(data-dismiss='modal') Cancel
   //the_button
-  button.btn.btn-default(data-toggle='modal', data-target='#categorize') Categorize
+  //button.btn.btn-default(data-toggle='modal', data-target='#categorize') Categorize
 
   #blocks
