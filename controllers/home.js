@@ -112,7 +112,7 @@ exports.recentItems = (req,res) => {
 	console.log('getting recent items in exports')
 	items = User.aggregate(
 		[{ $unwind: "$sale" },
-		{ $project: {email: 1, _id: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created"} },
+		{ $project: {email: 1, _id: 1, profile: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created", description: "$sale.description"} },
 		{ $sort: {item_create: -1} }, {$limit : 5}]).exec(
 		  	function(err, items) {
 		  		if (!items){
