@@ -1,12 +1,12 @@
 extends layout
 
 block content
-  h1 Item: #{item.name}
-    h4 Current bid: $#{item.price}
-    p Date listed: #{item.date}
-    p Status: #{item.status}
+  h1 Item: #{item.item.name}
+    h4 Current bid: $#{item.item.price}
+    p Date listed: #{item.item.date}
+    p Status: #{item.item.status}
     p Description:
-    p &nbsp &nbsp &nbsp #{item.description}
-    p Category: #{item.category}
-    form(action="", method="post", role="form")
+    p &nbsp &nbsp &nbsp #{item.item.description}
+    p Category: #{item.item.category}
+    form(action="", method="put", role="form")
       button.btn.btn-success(type="submit") Buy
