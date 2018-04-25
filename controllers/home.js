@@ -75,7 +75,7 @@ var getUser = (req, res, callback) => {
 
 var renderCommonArea = (req,res, responseData) => {
 	console.log('inside renderCommonArea');
-	console.log(responseData);
+	//console.log(responseData);
 	res.render('common', {
 	    title: 'common',
 	    items: responseData

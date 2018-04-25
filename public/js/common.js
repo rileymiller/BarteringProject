@@ -1,9 +1,12 @@
 var items = [];
 var userid;
 var server;
+var socket;
 
 $(document).ready(() => {
 
+	 socket = io();
+	 
 	console.log('inside common.js');
 	
 	/*var apiOptions = {
@@ -65,13 +68,21 @@ $(document).ready(() => {
 	        success: function(data) {
 	            console.log('success creating new item');
 	            $('#new-item-modal').modal('hide');
+	            socket.emit('item created', data);
 	            clearModal();
 	        }, error: function(d) {
 	        	console.log(d);
 	        }
 		});
 		}
-	}) 
+	});
+
+	//
+	socket.on('new item', (itemdata) => {
+		console.log('new item msg received from the server');
+		console.log(itemdata);
+		items = itemdata;
+	}); 
 	//console.log(items);
 
 });
