@@ -4,6 +4,8 @@ var server = window.location.origin;
 var userid;
 var socket;
 var user;
+var width;
+var height;
 
 $(document).ready(() => {
 
@@ -98,13 +100,17 @@ $(document).ready(() => {
 
     }
 
+$(window).resize(function() {
+	width = $(window).width()
+	height = $(window).height()
+})
 
 var drawSVG = () => {
 	console.log(items);
 	// console.log(typeof(items));
 
-	var width = 1600
-	var height = 600
+	width = $(window).width()
+	height = $(window).height()
 
 	var numParticles = items.length
 	var maxVelocity = 1
