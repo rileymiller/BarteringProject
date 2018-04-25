@@ -8,11 +8,11 @@
         span.icon-bar
       a.navbar-brand(href='/')
         i.fas.fa-cube
-        | Mines Barter
+        | The Mine Cart
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         if(user)
-          li(class=(title === 'Home') ? 'active' : undefined)
+          li(class=(title === 'Item Listings') ? 'active' : undefined)
             a(href='/common/' + user.id) Home
         else
           li(class=(title === 'Home') ? 'active' : undefined)
