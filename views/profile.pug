@@ -51,20 +51,74 @@ block content
         | &nbsp- $#{item.price}
         p &nbsp &nbsp &nbsp #{item.description}
       if(user._id == p_user._id)
-        div.col-sm-4
+        div.col-sm-2
           form(id="delete-item", onsubmit="return false;")
             button#submit.btn.btn-danger(type='button') Delete item
+        div.col-sm-2
+          div.modal.fade(id='edit-item-modal'+item._id tabindex="-1" aria-hidden="true")
+            div.modal-dialog.modal-md
+              div.modal-content
+                .modal-header
+                  h3.modal-title(style="display:inline;") Edit Item
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                div.modal-body
+                  form(id="edit-item", onsubmit="return false;")
+                    div#error.noerror
+                    div#id.noerror=user.id
+                    .form-group
+                      label(for='name') Name
+                      input#name.form-control(type='text', name='name', value=item.name required)
+                    .form-group
+                      label(for='price') Price
+                      input#price.form-control(type='number', name='price', value=item.price required)
+                    .form-group
+                      label(for='category') Category
+                      select#category.form-control
+                        if(item.category == 'Other')
+                          option(selected= true) Other
+                        else
+                          option Other
+                        if(item.category == 'Tutoring')
+                          option(selected= true) Tutoring
+                        else
+                          option Tutoring
+                        if(item.category == 'Textbooks')
+                          option(selected= true) Textbooks
+                        else
+                          option Textbooks
+                        if(item.category == 'Living')
+                          option(selected= true) Living
+                        else
+                          option Living
+                        if(item.category == 'Transportation')
+                          option(selected= true) Transportation
+                        else
+                          option Transportation
+                        if(item.category == 'Relationship')
+                          option(selected= true) Relationship
+                        else
+                          option Relationship
+                        //option Tutoring
+                        //option Textbooks
+                        //option Living
+                        //option Transportation
+                        //option Relationship
+                    .form-group
+                      label(for='description') Description
+                      textarea#description.form-control(rows='4') #{item.description}
+                  .modal-footer
+                    button#submit.btn.btn-primary(type='button') Update Item
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+  
+          //the_button
+          button.btn.btn-default(data-toggle='modal', data-target='#edit-item-modal'+item._id) Edit item
   br
   p Items bought:
   each item in p_user.bought
     div.container-fluid
-      div.col-sm-8
+      div.col-sm-10
         a(href="/"+p_user._id+"/item/"+item._id) #{item.name}
         | &nbsp- $#{item.price}
         p &nbsp &nbsp &nbsp #{item.description}
-      if(user._id == p_user._id)
-        div.col-sm-4
-          form(id="delete-item", onsubmit="return false;")
-            button#submit.btn.btn-danger(type='button') Delete item
-
 
