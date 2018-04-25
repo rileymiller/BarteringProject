@@ -108,10 +108,10 @@ var getRecentItems = () => {
 		});
 }
 
-$(window).resize(function() {
-	width = $(window).width()
-	height = $(window).height()
-})
+// $(window).resize(function() {
+// 	width = $(window).width()
+// 	height = $(window).height()
+// })
 
 
 var drawSVG = () => {
@@ -119,7 +119,7 @@ var drawSVG = () => {
 	// console.log(typeof(items));
 
 	width = $(window).width()
-	height = $(window).height()
+	height = $(window).height() - $(window).height() / 5;
 
 	var numParticles = items.length
 	var maxVelocity = 1
