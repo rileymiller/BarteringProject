@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 const express = require('express');
+
 const compression = require('compression');
 const session = require('express-session');
 const bodyParser = require('body-parser');
@@ -13,7 +14,14 @@ const dotenv = require('dotenv');
 const MongoStore = require('connect-mongo')(session);
 const flash = require('express-flash');
 const path = require('path');
+var request = require('request');
+var apiOptions = {
+    server: "http://localhost:8080"
+};
 
+if (process.env.NODE_ENV === 'production') {
+    apiOptions.server = "https://nameless-basin-42853.herokuapp.com";
+}
 const mongoose = require('mongoose');
 const passport = require('passport');
 const expressValidator = require('express-validator');
@@ -47,6 +55,11 @@ const passportConfig = require('./config/passport');
  * Create Express server.
  */
 const app = express();
+var http = require('http');
+var server = http.createServer(app);
+console.log(server)
+var io = require('socket.io').listen(server);
+
 
 
 
@@ -124,12 +137,16 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 const routeApi = require('./api/routes/index');
 app.use('/usersanditems', routeApi);
 
+//var recentItems = require('./controllers/home.js');
+
+
 /**
  * Primary app routes.
  */
 app.get('/', homeController.index);
-app.get('/common/:userid', homeController.common)
-app.get('/newcommon', homeController.newcommon)
+app.get('/common/:userid', homeController.common);
+app.get('/newcommon', homeController.newcommon);
+app.get('/recentItems', homeController.recentItems);
 app.get('/:userid/item/:itemid', homeController.item);
 app.get('/:userid/profile', homeController.profile);
 app.get('/login', userController.getLogin);
@@ -235,12 +252,66 @@ app.get('/auth/pinterest/callback', passport.authorize('pinterest', { failureRed
  */
 app.use(errorHandler());
 
+
+var getRecentItems = (callback) => {
+  var requestOptions, path;
+  console.log('inside getRecentItems');
+    path = "/usersanditems/recentitems";
+    requestOptions = {
+        url: apiOptions.server + path,
+        method: "GET",
+        json: {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            var data = body;
+            if (response.statusCode === 200) {
+
+                callback(data);
+            } else {
+               // _showError(res, response.statusCode);
+               console.log(response.statusCode);
+            }
+        }
+    );
+}
+
+/**
+* Web socket for socket.io
+*/
+
+io.on('connection', function(socket){
+  console.log('USER CONNECTED!!!!!!!!!');
+  
+  socket.on('item created', (data) => {
+    console.log('item created in socket.io');
+    console.log(data);
+    var itemdata;
+    getRecentItems(function(responseData){
+      console.log(responseData);
+      itemdata = responseData;
+      io.emit('new item', itemdata); 
+    });
+
+  });
+
+
+
+  socket.on('disconnect', function(){
+    console.log('USER DISCONNECTED');
+  });
+});
+
 /**
  * Start Express server.
  */
-app.listen(app.get('port'), () => {
+server.listen(app.get('port'), () => {
   console.log('%s App is running at http://localhost:%d in %s mode', chalk.green('✓'), app.get('port'), app.get('env'));
   console.log('  Press CTRL-C to stop\n');
 });
+
+
+
 
 module.exports = app;

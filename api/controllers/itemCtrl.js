@@ -18,9 +18,9 @@ module.exports.createItem = function(req, res) {
                     if (err) {
                         sendJsonResponse(res, 400, err);
                     } else {
-                        console.log(req.body);
+                        //console.log(req.body);
                         //console.log(res);
-                        console.log(user);
+                        //console.log(user);
                         doAddItem(req, res, user);
                     }
                 }
@@ -38,6 +38,7 @@ var doAddItem = function(req, res, user) {
         sendJsonResponse(res, 404, "userid not found");
     } else {
         console.log('inside of doAddItem');
+
         console.log(user);
         console.log(req.body);
         var d = new Date();
@@ -74,7 +75,7 @@ module.exports.getItemById = function(req, res) {
             .select('sale')
             .exec(
                 function(err, user) {
-                    console.log(user);
+                    //console.log(user);
                     var response, item;
                     if (!user) {
                         sendJsonResponse(res, 404, {
@@ -143,8 +144,8 @@ module.exports.updateItem = function(req, res) {
                             "message": "itemid not found"
                         });
                     } else {
-                        console.log(user);
-                        console.log(req.body)
+                       // console.log(user);
+                        //console.log(req.body)
 
                         thisItem.name = req.body.name;
                         thisItem.category = req.body.category;
@@ -157,7 +158,7 @@ module.exports.updateItem = function(req, res) {
                             if (err) {
                                 sendJsonResponse(res, 400, err);
                             } else {
-                            	console.log(thisItem);
+                            	//console.log(thisItem);
                                 sendJsonResponse(res, 200, thisItem);
                             }
                         });

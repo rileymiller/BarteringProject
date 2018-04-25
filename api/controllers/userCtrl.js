@@ -24,7 +24,7 @@ module.exports.getUserById = function(req, res) {
                     sendJsonResponse(res, 404, err);
                     return;
                 }
-                console.log(user)
+               // console.log(user)
                 sendJsonResponse(res, 200, user);
             });
     } else {
@@ -43,7 +43,7 @@ module.exports.getBoughtItems = function(req, res) {
             .select('bought')
             .exec(
                 function(err, user) {
-                    console.log(user);
+                   // console.log(user);
                     var response;
 
                     // checks if user is valid
@@ -85,7 +85,7 @@ module.exports.getSaleItems = function(req, res) {
             .select('sale')
             .exec(
                 function(err, user) {
-                    console.log(user);
+                  //  console.log(user);
                     var response;
 
                     // checks if user is valid

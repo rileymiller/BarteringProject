@@ -2,9 +2,13 @@ var items = [];
 var user = {};
 var server = window.location.origin;
 var userid;
+var socket;
+var user;
 
 $(document).ready(() => {
 
+	 socket = io();
+	 
 	console.log('inside common.js');
 	
 	/*var apiOptions = {
@@ -15,11 +19,12 @@ $(document).ready(() => {
 	// if (process.env.NODE_ENV === 'production') {
 	//     apiOptions.server = "https://nameless-basin-42853.herokuapp.com";
 	// }
-	 server = window.location.origin;
-	 console.log(window.location.origin);
+	server = window.location.origin;
+	console.log(window.location.origin);
+
 	$(function(){
 		var path = "/usersanditems/recentItems";
-		console.log('inside of ajax')
+		console.log('inside of get recentItems')
 		$.ajax({
 			type:'GET',
 			contentType: 'application/json',
@@ -54,23 +59,31 @@ $(document).ready(() => {
 			$('#error').attr('class', 'noerror');
 			var path = "/usersanditems/" + userid + '/item';
 			console.log(window.location.href);
-			//console.log(user.id);
 
+			// create the new item
 			$.ajax({
-			type:'POST',
-			contentType: 'application/json',
-	        url: server + path,
-	        data: JSON.stringify({name: name, category: category, description: description, price: price}),						
-	        success: function(data) {
-	            console.log('success creating new item');
-	            $('#new-item-modal').modal('hide');
-	            clearModal();
-	        }, error: function(d) {
-	        	console.log(d);
-	        }
-		});
+				type:'POST',
+				contentType: 'application/json',
+		        url: server + path,
+		        data: JSON.stringify({name: name, category: category, description: description, price: price}),						
+		        success: function(data) {
+		            console.log('success creating new item');
+		            $('#new-item-modal').modal('hide');
+		            socket.emit('item created', data);
+		            clearModal();
+		        }, error: function(d) {
+		        	console.log(d);
+		        }
+			});
 		}
-	}) 
+	});
+
+	//
+	socket.on('new item', (itemdata) => {
+		console.log('new item msg received from the server');
+		console.log(itemdata);
+		items = itemdata;
+	}); 
 	//console.log(items);
 
 });
