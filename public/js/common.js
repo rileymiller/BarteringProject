@@ -1,6 +1,7 @@
 var items = [];
+var user = {};
+var server = window.location.origin;
 var userid;
-var server;
 
 $(document).ready(() => {
 
@@ -9,7 +10,6 @@ $(document).ready(() => {
 	/*var apiOptions = {
 	    server: "http://localhost:8080"
 	};*/
-
 	userid = $('#id').text();
 	userid.replace(/\s+/g, '');
 	// if (process.env.NODE_ENV === 'production') {
@@ -26,15 +26,14 @@ $(document).ready(() => {
 	        url: server + path,						
 	        success: function(data) {
 	            console.log('success');
-	             console.log(JSON.stringify(data));
-	             console.log(data);
-	             items = data;
-	             console.log(typeof(data));
-	             drawSVG();
+	            // console.log(JSON.stringify(data));
+	            // console.log(data);
+	            items = data;
+	            // console.log(typeof(data));
+	            drawSVG();
 	        }
 		});
 	});
-
 
 	$('button#submit').on('click', function(e) {
 		console.log('form submit button clicked');
@@ -89,20 +88,26 @@ $(document).ready(() => {
 
 var drawSVG = () => {
 	console.log(items);
-	console.log(typeof(items));
+	// console.log(typeof(items));
 
-	var width = 960
-	var height = 500
+	var width = 1600
+	var height = 600
 
-	var numParticles = 20
-	var maxVelocity = 8
+	var numParticles = items.length
+	var maxVelocity = 1
 
-	var color = d3.scaleOrdinal().range(d3.schemeCategory20)
+	// var color = d3.scaleOrdinal().domain(items).range(d3.schemeCategory20)
+	var color = d3.scaleOrdinal(d3.schemeCategory10);
+	// console.log(d3.schemeCategory10);
+	// console.log(color)
 
 	var nodes = Array.apply(null, Array(numParticles)).map(function (_, i) {
-	    var size = Math.random() * 60 + 20
-	    var velocity = Math.random() * 2 + 1
+	    // var size = Math.random() * 60 + 20
+	    var size = 200
+	    var velocity = Math.random() * 1.5 + 1
 	    var angle = Math.random() * 360
+	    // console.log(items[i])
+	    console.log(items[i])
 
 	    return {
 	        x: Math.random() * (width - size),
@@ -110,7 +115,16 @@ var drawSVG = () => {
 	        vx: velocity * Math.cos(angle * Math.PI / 180),
 	        vy: velocity * Math.sin(angle * Math.PI / 180),
 	        size: size,
-	        fill: color(i)
+	        fill: color(i),
+	        email: items[i].email,
+	        category: items[i].item_category,
+	        time_created: items[i].item_create,
+	        description: items[i].description,
+	        item_id: items[i].item_id,
+	        item_name: items[i].item_name,
+	        item_price: items[i].item_price,
+	        user_id: items[i]._id,
+	        user_name: items[i].profile.name
 	    }
 	})
 
@@ -121,18 +135,85 @@ var drawSVG = () => {
 
 	var svg = d3.select('body').append('svg')
 
-	var rects = svg
-	    .attr('width', width)
+	var g = svg
+		.attr('width', width)
 	    .attr('height', height)
-	    .selectAll('rect')
-	    .data(nodes)
-	    .enter().append('rect')
+		.selectAll('g')
+		.data(nodes)
+	    .enter().append('g')
+	    .attr('x', function (d) { return d.x })
+	    .attr('y', function (d) { return d.y })
+	    .attr('email', function (d) { return d.email })
+	    .attr('description', function (d) { return d.description })
+	    .attr('category', function (d) { return d.category })
+	    .attr('time_created', function (d) { return d.time_created })
+	    .attr('item_id', function (d) { return d.item_id })
+	    .attr('item_name', function (d) { return d.item_name })
+	    .attr('item_price', function (d) { return d.item_price })
+	    .attr('user_id', function (d) {return d.user_id })
+	    .attr('user_name', function (d) {return d.user_name })
+	   	.call(drag)
+
+	var rects = g.append('rect')
 	    .style('fill', function (d) { return d.fill })
 	    .attr('width', function (d) { return d.size })
 	    .attr('height', function (d) { return d.size })
 	    .attr('x', function (d) { return d.x })
 	    .attr('y', function (d) { return d.y })
-	    .call(drag)
+	    .style('rx', '15px')
+	    .style('ry', '15px')
+
+	var name = g.append('a')
+		.attr("xlink:href", function (d) { return server + '/' + d.user_id + "/item/" + d.item_id })
+	    .append('text')
+	    .attr('x', function (d) { return d.x + 15 })
+	    .attr('y', function (d) { return d.y + 25 })
+		.text(function (d) { return d.item_name })
+		.attr("fill","#FFF")
+        .attr("text-anchor","left")
+        .style("font-size", "16px")
+        .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
+
+
+    var price = g.append('text')
+		.attr('x', function (d) { return d.x + 15 })
+	    .attr('y', function (d) { return d.y + 50 })
+		.text(function (d) { return '$ ' + d.item_price })
+		.attr("fill","#FFF")
+        .attr("text-anchor","left")
+        .style("font-size", "16px")
+        .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
+
+    var description = g.append('text')
+		.attr('x', function (d) { return d.x + 15 })
+	    .attr('y', function (d) { return d.y + 75 })
+		.text(function (d) { return d.description })
+		.attr("fill","#FFF")
+        .attr("text-anchor","left")
+        .style("font-size", "16px")
+        .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
+
+    var username = g.append('a')
+		.attr("xlink:href", function (d) { return server + '/' + d.user_id + '/profile' })
+	    .append('text')
+	    .attr('x', function (d) { return d.x + 15 })
+	    .attr('y', function (d) { return d.y + 25 })
+		.text(function (d) { 
+			console.log(d.user_name)
+			return d.user_name })
+		.attr("fill","#FFF")
+        .attr("text-anchor","left")
+        .style("font-size", "16px")
+        .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
+
+	// d3.selectAll("g").each( function(d, i){
+	// 	// document.getElementById("g").appendChild(newText);
+ //    	console.log(
+ //    		'email: ',d3.select(this).attr("email"),
+ //    		'description: ', d3.select(this).attr("description"),
+ //    	 );
+  		
+	// })
 
 	var collisionForce = rectCollide()
 	    .size(function (d) { return [d.size, d.size] })
@@ -150,6 +231,7 @@ var drawSVG = () => {
 	    .nodes(nodes)
 
 	function rectCollide() {
+		console.log('in rectCollide')
 	    var nodes, sizes, masses
 	    var size = constant([0, 0])
 	    var strength = 1
@@ -300,6 +382,22 @@ var drawSVG = () => {
 	    rects
 	        .attr('x', function (d) { return d.x })
 	        .attr('y', function (d) { return d.y })
+
+	    name
+	        .attr('x', function (d) { return d.x + 15 })
+	        .attr('y', function (d) { return d.y + 25 })
+
+	    price
+	        .attr('x', function (d) { return d.x + 15 })
+	        .attr('y', function (d) { return d.y + 50 })
+
+	    description
+	        .attr('x', function (d) { return d.x + 15 })
+	        .attr('y', function (d) { return d.y + 75 })
+
+	    username
+	        .attr('x', function (d) { return d.x + 15 })
+	        .attr('y', function (d) { return d.y + 100 })
 	}
 
 	var px, py, vx, vy, offsetX, offsetY
