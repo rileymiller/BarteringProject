@@ -1,11 +1,14 @@
 extends layout
 
 block content
+  script(src="/js/lib/jquery-3.1.1.min.js")
+  script(src="/js/profile.js")
   div.pHeading(style="font-style: italic")
    h1 #{p_user.profile.name}
    p Location: #{p_user.profile.location}
    p Website: #{p_user.profile.website}
    p Gender: #{p_user.profile.gender}
+   div#id.noerror=user.id
   if(user._id == p_user._id)
     div.modal.fade(id='new-item-modal' tabindex="-1" aria-hidden="true")
       div.modal-dialog.modal-md
@@ -53,10 +56,9 @@ block content
         p &nbsp &nbsp &nbsp #{item.description}
       if(user._id == p_user._id)
         div.col-sm-2
-          form(id="delete-item", onsubmit="return false;")
-            i.fas.fa-trash(type='button') 
+          i.fas.fa-trash(type='button' id="delete-item-" + item._id) 
         div.col-sm-2()
-          div.modal.fade(id='edit-item-modal'+item._id tabindex="-1" aria-hidden="true" )
+          div.modal.fade(id='edit-item-modal-'+item._id tabindex="-1" aria-hidden="true" )
             div.modal-dialog.modal-md
               div.modal-content
                 .modal-header
@@ -69,13 +71,13 @@ block content
                     div#id.noerror=user.id
                     .form-group
                       label(for='name') Name
-                      input#name.form-control(type='text', name='name', value=item.name required)
+                      input.form-control(type='text', id='name-' + item._id, name='name', value=item.name required)
                     .form-group
                       label(for='price') Price
-                      input#price.form-control(type='number', name='price', value=item.price required )
+                      input.form-control(type='number', id='price-' + item._id, name='price', value=item.price required )
                     .form-group
                       label(for='category') Category
-                      select#category.form-control
+                      select.form-control(id='category-' + item._id)
                         if(item.category == 'Other')
                           option(selected= true) Other
                         else
@@ -107,13 +109,13 @@ block content
                         //option Relationship
                     .form-group
                       label(for='description') Description
-                      textarea#description.form-control(rows='4') #{item.description}
+                      textarea.form-control(rows='4', id='description-' + item._id) #{item.description}
                   .modal-footer
-                    button#submit.btn.btn-primary(type='button') Update Item
+                    button.btn.btn-primary(type='button', id='esubmit-' + item._id) Update Item
                     button.btn.btn-secondary(type='button', data-dismiss='modal') Close
           //the_button
           //button.btn.btn-default(data-toggle='modal', data-target='#edit-item-modal'+item._id) Edit item
-          i.fas.fa-edit(data-toggle='modal', data-target='#edit-item-modal'+item._id, )
+          i.fas.fa-edit(data-toggle='modal', data-target='#edit-item-modal-'+item._id, )
 
   br
   p Items bought:
