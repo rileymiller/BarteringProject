@@ -145,7 +145,8 @@ module.exports.updateItem = function(req, res) {
                         });
                     } else {
                        // console.log(user);
-                        //console.log(req.body)
+                       console.log('inside of update item')
+                        console.log(req.body)
 
                         thisItem.name = req.body.name;
                         thisItem.category = req.body.category;

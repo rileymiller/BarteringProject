@@ -72,6 +72,15 @@ textarea {
 .error {
   display:block;
 }
+
+i .fas .fa-edit {
+  cursor: pointer;
+}
+
+.fa-edit, .fa-trash {
+  cursor: pointer;
+}
+
 // Font Icons
 // -------------------------
 
