@@ -1,10 +1,11 @@
 extends layout
 
 block content
-  h1 Name: #{p_user.profile.name}
-  p Location: #{p_user.profile.location}
-  p Website: #{p_user.profile.website}
-  p Gender: #{p_user.profile.gender}
+  div.pHeading(style="font-style: italic")
+   h1 Name: #{p_user.profile.name}
+   p Location: #{p_user.profile.location}
+   p Website: #{p_user.profile.website}
+   p Gender: #{p_user.profile.gender}
   if(user._id == p_user._id)
     div.modal.fade(id='new-item-modal' tabindex="-1" aria-hidden="true")
       div.modal-dialog.modal-md
@@ -45,17 +46,17 @@ block content
   br
   p Items for sale:
   each item in p_user.sale
-    div.container-fluid
-      div.col-sm-8
+    div.container-fluid(style="background-color: #99E6E6; border-radius: 10px;padding: 20px;margin:10px")
+      div.col-sm-8(style="")
         a(href="/"+p_user._id+"/item/"+item._id) #{item.name}
         | &nbsp- $#{item.price}
         p &nbsp &nbsp &nbsp #{item.description}
       if(user._id == p_user._id)
         div.col-sm-2
           form(id="delete-item", onsubmit="return false;")
-            button#submit.btn.btn-danger(type='button') Delete item
-        div.col-sm-2
-          div.modal.fade(id='edit-item-modal'+item._id tabindex="-1" aria-hidden="true")
+            i.fas.fa-trash(type='button') 
+        div.col-sm-2()
+          div.modal.fade(id='edit-item-modal'+item._id tabindex="-1" aria-hidden="true" )
             div.modal-dialog.modal-md
               div.modal-content
                 .modal-header
@@ -71,7 +72,7 @@ block content
                       input#name.form-control(type='text', name='name', value=item.name required)
                     .form-group
                       label(for='price') Price
-                      input#price.form-control(type='number', name='price', value=item.price required)
+                      input#price.form-control(type='number', name='price', value=item.price required )
                     .form-group
                       label(for='category') Category
                       select#category.form-control
@@ -110,13 +111,14 @@ block content
                   .modal-footer
                     button#submit.btn.btn-primary(type='button') Update Item
                     button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-  
           //the_button
-          button.btn.btn-default(data-toggle='modal', data-target='#edit-item-modal'+item._id) Edit item
+          //button.btn.btn-default(data-toggle='modal', data-target='#edit-item-modal'+item._id) Edit item
+          i.fas.fa-edit(data-toggle='modal', data-target='#edit-item-modal'+item._id, )
+
   br
   p Items bought:
   each item in p_user.bought
-    div.container-fluid
+    div.container-fluid(style="background-color: #FF6633; border-radius: 10px;padding: 20px;margin:10px")
       div.col-sm-10
         a(href="/"+p_user._id+"/item/"+item._id) #{item.name}
         | &nbsp- $#{item.price}
