@@ -9,6 +9,7 @@ var getItems = require('../../controllers/home.js');
 router.get('/user/:userid', userItemCtrl.getUserById); 
 router.get('/user/:userid/bought', userItemCtrl.getBoughtItems);
 router.get('/user/:userid/sale', userItemCtrl.getSaleItems);
+router.put('/user/:userid', userCtrl.updateUser);
 
 // user routes
 
