@@ -39,7 +39,8 @@ $(document).ready(() => {
 		console.log("name: " + name + ", category: " + category + ", price: " + price + ", description: " + description);
 
 		if(name == '' || category == '' || price == '' || description ==''){
-			$('#error').append('<div class=\"alert alert-danger\" role=\"alert\">All fields must be filled out!</div>')
+			$('#alert_msg').remove();
+			$('#error').append('<div id=\"alert_msg\" class=\"alert alert-danger\" role=\"alert\">All fields must be filled out!</div>')
 			.attr('class', 'error');
 		} else {
 			$('#error').attr('class', 'noerror');
