@@ -195,6 +195,7 @@ var drawSVG = () => {
 
 	var name = g.append('a')
 		.attr("xlink:href", function (d) { return server + '/' + d.user_id + "/item/" + d.item_id })
+		.attr("class", "linkstyle")
 	    .append('text')
 	    .attr('x', function (d) { return d.x + 15 })
 	    .attr('y', function (d) { return d.y + 25 })
@@ -204,6 +205,9 @@ var drawSVG = () => {
         .style("font-size", "16px")
         .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
 
+  //       overflow: hidden;
+  // text-overflow: ellipsis;
+  // max-width: 200px;
 
     var price = g.append('text')
 		.attr('x', function (d) { return d.x + 15 })
@@ -221,10 +225,14 @@ var drawSVG = () => {
 		.attr("fill","#FFF")
         .attr("text-anchor","left")
         .style("font-size", "16px")
+        .style('overflow', 'hidden')
+        // .style('text-overflow', 'ellipsis')
+        // .style('max-width', '150px')
         .style("font-family", "HelveticaNeue-CondensedBold, HelveticaNeue-CondensedBold, Helvetica Neue, Arial, sans-serif");
 
     var username = g.append('a')
 		.attr("xlink:href", function (d) { return server + '/' + d.user_id + '/profile' })
+		.attr("class", "linkstyle")
 	    .append('text')
 	    .attr('x', function (d) { return d.x + 15 })
 	    .attr('y', function (d) { return d.y + 25 })
