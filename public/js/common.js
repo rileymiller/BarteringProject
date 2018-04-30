@@ -234,10 +234,12 @@ var drawSVG = () => {
 	    .attr('y', function (d) { return d.y + 75 })
 		.text(function (d) { 
 			var returnText = ""
-			if (d.description.length > 25) {
-				returnText = d.description.substring(0,25) + '...'
-			} else {
-				returnText = d.description
+			if (typeof d.description != 'undefined'){
+				if (d.description.length > 25) {
+					returnText = d.description.substring(0,25) + '...'
+				} else {
+					returnText = d.description
+				}
 			}
 			return returnText
 		})
