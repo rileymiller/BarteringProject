@@ -98,6 +98,10 @@ textarea {
 box-shadow: 3px 2px 11px 1px rgba(0,0,0,0.75);
 }
 
+.all_items:hover {
+  background-color: rgba(125,125,125, 0.1);
+}
+
 i .fas .fa-edit {
   cursor: pointer;
 }

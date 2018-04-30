@@ -49,7 +49,7 @@ block content
   br
   p Items for sale:
   each item in p_user.sale
-    div.container-fluid(style="background-color: #99E6E6; border-radius: 10px;padding: 20px;margin:10px")
+    div.container-fluid(class="all_items")
       div.col-sm-8(style="")
         a(href="/"+p_user._id+"/item/"+item._id) #{item.name}
         | &nbsp- $#{item.price}
@@ -120,7 +120,7 @@ block content
   br
   p Items bought:
   each item in p_user.bought
-    div.container-fluid(style="background-color: #FF6633; border-radius: 10px;padding: 20px;margin:10px")
+    div.container-fluid(class="all_items")
       div.col-sm-10
         a(href="/"+p_user._id+"/item/"+item._id) #{item.name}
         | &nbsp- $#{item.price}
