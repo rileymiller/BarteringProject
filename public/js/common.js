@@ -63,7 +63,7 @@ $(document).ready(() => {
 		            clearModal();
 		            $('#blockCanvas').remove();
 		            getRecentItems();
-
+		            drawSVG();
 		        }, error: function(d) {
 		        	console.log(d);
 		        }
