@@ -143,7 +143,7 @@ app.use('/usersanditems', routeApi);
 /**
  * Primary app routes.
  */
-app.get('/', homeController.about);
+app.get('/', homeController.index);
 app.get('/common/:userid', homeController.common);
 app.get('/newcommon', homeController.newcommon);
 app.get('/recentItems', homeController.recentItems);
