@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 All Items Listing:
+  
+  each i in item
+    div.container-fluid(style="background-color: #FF6633; border-radius: 10px;padding: 20px;margin:10px")
+      div.col-sm-10
+        a(href="/"+item._id+"/item/"+i._id) #{i.name}
+        | &nbsp- $#{i.price}
+        p &nbsp &nbsp &nbsp #{i.description}
+
