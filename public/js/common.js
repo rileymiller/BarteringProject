@@ -200,7 +200,15 @@ var drawSVG = () => {
 	    .append('text')
 	    .attr('x', function (d) { return d.x + 15 })
 	    .attr('y', function (d) { return d.y + 25 })
-		.text(function (d) { return d.item_name })
+		.text(function (d) { 
+			var returnText = ""
+			if (d.item_name.length > 25) {
+				returnText = d.item_name.substring(0,25) + '...'
+			} else {
+				returnText = d.item_name
+			}
+			return returnText
+		})
 		.attr("fill","#FFF")
         .attr("text-anchor","left")
         .style("font-size", "16px")
@@ -222,7 +230,15 @@ var drawSVG = () => {
     var description = g.append('text')
 		.attr('x', function (d) { return d.x + 15 })
 	    .attr('y', function (d) { return d.y + 75 })
-		.text(function (d) { return d.description })
+		.text(function (d) { 
+			var returnText = ""
+			if (d.description.length > 25) {
+				returnText = d.description.substring(0,25) + '...'
+			} else {
+				returnText = d.description
+			}
+			return returnText
+		})
 		.attr("fill","#FFF")
         .attr("text-anchor","left")
         .style("font-size", "16px")
