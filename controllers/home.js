@@ -201,7 +201,7 @@ exports.recentItems = (req,res) => {
 	items = User.aggregate(
 		[{ $unwind: "$sale" },
 		{ $project: {email: 1, _id: 1, profile: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created", description: "$sale.description"} },
-		{ $sort: {item_create: 1} }, {$limit : 10}]).exec(
+		{ $sort: {item_id: -1} }, {$limit : 10}]).exec(
 		  	function(err, items) {
 		  		if (!items){
 		  			sendJsonResponse(res, 404, 'No documents found');
