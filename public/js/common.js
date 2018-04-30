@@ -167,7 +167,7 @@ var drawSVG = () => {
 	var g = svg
 		.attr('width', width)
 	    .attr('height', height)
-	    .attr('id', 'blockCanvas')
+	    .attr('class', 'blockCanvas')
 		.selectAll('g')
 		.data(nodes)
 	    .enter().append('g')
@@ -188,6 +188,7 @@ var drawSVG = () => {
 	    .style('fill', function (d) { return d.fill })
 	    .attr('width', function (d) { return d.size })
 	    .attr('height', function (d) { return d.size })
+	    .attr('class', 'block')
 	    .attr('x', function (d) { return d.x })
 	    .attr('y', function (d) { return d.y })
 	    .style('rx', '15px')
