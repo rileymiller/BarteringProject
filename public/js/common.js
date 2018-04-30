@@ -42,7 +42,11 @@ $(document).ready(() => {
 			$('#alert_msg').remove();
 			$('#error').append('<div id=\"alert_msg\" class=\"alert alert-danger\" role=\"alert\">All fields must be filled out!</div>')
 			.attr('class', 'error');
-		} else {
+		} else if (price.indexOf('-') > -1) {
+			$('#error').append('<div class=\"alert alert-danger\" role=\"alert\">Price must be a positive value!</div>')
+			.attr('class', 'error');
+		}
+		else {
 			$('#error').attr('class', 'noerror');
 			var path = "/usersanditems/" + userid + '/item';
 			console.log(window.location.href);
@@ -232,10 +236,12 @@ var drawSVG = () => {
 	    .attr('y', function (d) { return d.y + 75 })
 		.text(function (d) { 
 			var returnText = ""
-			if (d.description.length > 25) {
-				returnText = d.description.substring(0,25) + '...'
-			} else {
-				returnText = d.description
+			if (typeof d.description != 'undefined'){
+				if (d.description.length > 25) {
+					returnText = d.description.substring(0,25) + '...'
+				} else {
+					returnText = d.description
+				}
 			}
 			return returnText
 		})
