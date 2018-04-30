@@ -12,12 +12,12 @@ router.get('/user/:userid/sale', userItemCtrl.getSaleItems);
 
 // user routes
 
-
 // item routes
 router.post('/:userid/item', itemCtrl.createItem);
 router.put('/item/:userid/:itemid', itemCtrl.updateItem);
 router.delete('/item/:userid/:itemid', itemCtrl.deleteItem);
 router.get('/item/:userid/:itemid', itemCtrl.getItemById);
 router.get('/recentItems', getItems.recentItems);
+router.get('/allItems', getItems.allItems);
 
 module.exports = router;

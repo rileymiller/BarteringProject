@@ -201,7 +201,7 @@ exports.recentItems = (req,res) => {
 	items = User.aggregate(
 		[{ $unwind: "$sale" },
 		{ $project: {email: 1, _id: 1, profile: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created", description: "$sale.description"} },
-		{ $sort: {_id: -1} }, {$limit : 10}]).exec(
+		{ $sort: {item_id: -1} }, {$limit : 10}]).exec(
 		  	function(err, items) {
 		  		if (!items){
 		  			sendJsonResponse(res, 404, 'No documents found');
@@ -215,4 +215,74 @@ exports.recentItems = (req,res) => {
 		  		}
 		  	}
 		);
+}
+
+var getAllItems = (req, res, callback) => {
+	var requestOptions, path;
+	console.log('inside getAllItems');
+    path = "/getItems";
+    requestOptions = {
+        url: apiOptions.server + path,
+        method: "GET",
+        json: {}
+    };
+    request(
+        requestOptions,
+        function(err, response, body) {
+            var data = body;
+            if (response.statusCode === 200) {
+
+                callback(req, res, data);
+            } else {
+                _showError(req, res, response.statusCode);
+            }
+        }
+    );
+}
+
+var renderAllItems = (req,res, responseData) => {
+	console.log('inside renderAllItems');
+	console.log(responseData);
+	res.render('itemList', {
+	    title: 'Item List',
+	    item: responseData
+	  });
+}
+
+/**
+* GET /recentItems
+* get all items
+*/
+exports.getItems = (req,res) => {
+    
+    
+    console.log('getting recent items in exports')
+	items = User.aggregate(
+		[{ $unwind: "$sale" },
+		{ $project: {email: 1, _id: 1, profile: 1, item_id: "$sale._id", item_name: "$sale.name", item_category: "$sale.category", item_price: "$sale.price", item_create: "$sale.created", description: "$sale.description"} },
+		{ $sort: {item_create: 1} }]).exec(
+		  	function(err, items) {
+		  		if (!items){
+		  			sendJsonResponse(res, 404, 'No documents found');
+		  			return;
+		  		} else if (err) {
+		  			sendJsonResponse(res, 400, err)
+		  			return;
+		  		}
+		  		if(items) {
+		  			sendJsonResponse(res, 200, items);
+		  		}
+		  	}
+		);
+}
+
+
+exports.allItems = (req,res) => {
+    console.log('inside All items');
+	// console.log(req.params.itemid);
+	// console.log(req.params.userid);
+
+	getAllItems(req, res, function(req, res, responseData) {
+		renderAllItems(req, res, responseData);
+	});
 }

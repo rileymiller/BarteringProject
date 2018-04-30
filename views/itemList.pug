@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 All Items Listing:
+  
+  each i in item
+    div.container-fluid(class="all_items")
+      div.col-sm-10
+        a(href="/"+i._id+"/item/"+i.item_id) #{i.item_name}
+        | &nbsp- $#{i.item_price}
+        p &nbsp &nbsp &nbsp #{i.description}
+

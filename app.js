@@ -147,6 +147,8 @@ app.get('/', homeController.about);
 app.get('/common/:userid', homeController.common);
 app.get('/newcommon', homeController.newcommon);
 app.get('/recentItems', homeController.recentItems);
+app.get('/allItems', homeController.allItems);
+app.get('/getItems', homeController.getItems);
 app.get('/about', homeController.about)
 app.get('/:userid/item/:itemid', homeController.item);
 app.get('/:userid/profile', homeController.profile);
