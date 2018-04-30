@@ -41,7 +41,11 @@ $(document).ready(() => {
 		if(name == '' || category == '' || price == '' || description ==''){
 			$('#error').append('<div class=\"alert alert-danger\" role=\"alert\">All fields must be filled out!</div>')
 			.attr('class', 'error');
-		} else {
+		} else if (price.indexOf('-') > -1) {
+			$('#error').append('<div class=\"alert alert-danger\" role=\"alert\">Price must be a positive value!</div>')
+			.attr('class', 'error');
+		}
+		else {
 			$('#error').attr('class', 'noerror');
 			var path = "/usersanditems/" + userid + '/item';
 			console.log(window.location.href);
