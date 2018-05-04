@@ -6,9 +6,14 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href='/')
-        i.fas.fa-shopping-cart
-        | The Mine Cart
+      if(user)
+        a.navbar-brand(href='/common/' + user.id)
+          i.fas.fa-shopping-cart
+          | The Mine Cart
+      else
+        a.navbar-brand(href='/')
+          i.fas.fa-shopping-cart
+          | The Mine Cart
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         if(user)
